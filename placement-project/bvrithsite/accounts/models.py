@@ -17,9 +17,6 @@ class Student(models.Model):
     updated_date = models.DateTimeField(
             blank=True, null=True)
 
-    def update(self):
-        self.updated_date = timezone.now()
-        self.save()
 
 
     def __str__(self):
