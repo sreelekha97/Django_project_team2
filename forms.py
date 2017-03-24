@@ -10,12 +10,13 @@ class RegistrationForm(ModelForm):
 '''
 from django import forms
 
-from .models import PersonalInfo
+from .models import AcademicInfo
 
 class PostForm(forms.ModelForm):
 
     class Meta:
-        model = PersonalInfo
-        fields = ('rollno', 'firstname', 'lastname', 'email','phonenumber','dob','address')
+        model = AcademicInfo
+        fields = ('yearofjoining', 'currentsem', 'aggregate', 'institution','BoardofEducation','interagg', 'inst', 'BoardofEd', 'percent')
         
+
 
