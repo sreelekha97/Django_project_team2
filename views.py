@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PersonalInfo
+from .models import AcademicInfo
 from .forms import PostForm
 from django.http import HttpResponse
 # Create your views here.
@@ -7,7 +7,7 @@ from django.http import HttpResponse
 def register(request):
     return HttpResponse("Welcome to student info system")
 def success(request):
-    return HttpResponse("Succesfully logged in")
+    return HttpResponse("Succesfully Entered your details")
 
 def post_new(request):
     if request.method=='GET':
@@ -16,8 +16,8 @@ def post_new(request):
     elif request.method=='POST':
        form=PostForm(request.POST)
        if form.is_valid():
-          PersonalInfo = form.save(commit=False)
-          PersonalInfo.save()
+          AcademicInfo = form.save(commit=False)
+          AcademicInfo.save()
           return success(form)
 
 '''def index(request):
