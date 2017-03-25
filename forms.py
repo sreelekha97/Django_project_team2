@@ -9,14 +9,36 @@ class RegistrationForm(ModelForm):
         fields = '__all__'
 '''
 from django import forms
-
+from .models import Registration
+from .models import PersonalInfo
 from .models import AcademicInfo
+from .models import AdditionalInfo
+
+class RegForm(forms.ModelForm):
+
+    class Meta:
+        model = Registration
+        fields = '__all__'
+        
 
 class PostForm(forms.ModelForm):
 
     class Meta:
-        model = AcademicInfo
-        fields = ('yearofjoining', 'currentsem', 'aggregate', 'institution','BoardofEducation','interagg', 'inst', 'BoardofEd', 'percent')
+        model = PersonalInfo
+        fields = '__all__'
         
 
+class AcadForm(forms.ModelForm):
+
+    class Meta:
+        model = AcademicInfo
+        fields = '__all__'
+        
+
+class AddForm(forms.ModelForm):
+
+    class Meta:
+        model = AdditionalInfo
+        fields = '__all__'
+        
 

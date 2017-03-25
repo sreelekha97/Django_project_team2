@@ -2,6 +2,14 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
+
+class Registration(models.Model):
+    username = models.CharField(max_length=30)
+    password = models.CharField(max_length=30)
+
+    def __str__(self):
+      return self.username
+
 class PersonalInfo(models.Model):
    rollno = models.CharField(max_length=30)
    firstname = models.CharField(max_length=30)
@@ -13,7 +21,6 @@ class PersonalInfo(models.Model):
 
    def __str__(self):
       return self.rollno
-
 
 class AcademicInfo(models.Model):
    yearofjoining = models.DateTimeField(blank=True, null=True)
@@ -28,3 +35,13 @@ class AcademicInfo(models.Model):
 
    def __str__(self):
       return self.yearofjoining
+
+class AdditionalInfo(models.Model):
+   technicalskills = models.CharField(max_length=500)
+   projects = models.CharField(max_length=500)
+   achievements = models.CharField(max_length=100)
+   workshops = models.CharField(max_length=500)
+   internships = models.CharField(max_length=300)
+   
+   def __str__(self):
+      return self.technicalskills

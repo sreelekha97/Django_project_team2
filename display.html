@@ -1,0 +1,16 @@
+<h1> done </h1>
+{% for x in login_details %}
+<p>{{ x.username }}</p>
+{% endfor %}
+<b>PersonalInfo</b>
+{% for details in perInfo_details %}
+<p> {{ details.rollno }}<br>{{ details.firstname }}<br>{{ details.lastname }}<br>{{ details.email }}<br>{{ details.phonenumber }}<br>{{ details.dob }}<br>{{ details.address }}</p>
+{% endfor %}
+<b>AcademicInfo</b>
+{% for y in acadInfo_details %}
+ <p>{{ y.yearofjoining }}</p>
+{% endfor %}
+<b>AdditionalInfo</b>
+{% for z in addInfo_details %}
+ <p>{{ z.projects }}</p>
+{% endfor %}
