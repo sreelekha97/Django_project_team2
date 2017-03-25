@@ -1,0 +1,5 @@
+python manage.py createsuperuser
+username:
+password:
+Password(again):
+Create super user
